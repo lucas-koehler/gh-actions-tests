@@ -10,18 +10,26 @@ jobs:
       - name: fail
         run: exit 1
 
-  second:
+  secondTrue:
     runs-on: ubuntu-latest
     needs: first
-    if: ${{ 'a' == 'a' }}
+    if: ${{ true }}
     steps:
       - name: echo
         run: echo "hello"
 
-  secondTwo:
+  secondSuccessAndTrue:
     runs-on: ubuntu-latest
     needs: first
-    if: ${{ success() && ('a' == 'a') }}
+    if: ${{ success() && true }}
+    steps:
+      - name: echo
+        run: echo "hello"
+
+  secondAlwaysAndTrue:
+    runs-on: ubuntu-latest
+    needs: first
+    if: ${{ always() && true }}
     steps:
       - name: echo
         run: echo "hello"
