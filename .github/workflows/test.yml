@@ -13,7 +13,7 @@ jobs:
   second:
     runs-on: ubuntu-latest
     needs: first
-    if: ${{ "a" == "a" }}
+    if: ${{ 'a' == 'a' }}
     steps:
       - name: echo
         run: echo "hello"
@@ -21,7 +21,7 @@ jobs:
   secondTwo:
     runs-on: ubuntu-latest
     needs: first
-    if: ${{ success() && ("a" == "a") }}
+    if: ${{ success() && ('a' == 'a') }}
     steps:
       - name: echo
         run: echo "hello"
