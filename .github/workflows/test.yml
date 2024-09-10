@@ -21,7 +21,7 @@ jobs:
   secondTwo:
     runs-on: ubuntu-latest
     needs: first
-    if: ${{ success() && "a" == "a" }}
+    if: ${{ success() && ("a" == "a") }}
     steps:
       - name: echo
         run: echo "hello"
